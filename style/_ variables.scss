@@ -1,0 +1,7 @@
+@mixin Flex($Vertically:center, $Horizontally:center, $axic:row){
+    display: flex; justify-content: $Vertically; align-items: $Horizontally; flex-direction: $axic; 
+}
+
+@mixin Image{
+    background-position: center; background-size: cover; background-repeat: no-repeat;
+}
