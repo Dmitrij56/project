@@ -9,7 +9,6 @@
 }
 
 body {
-  overflow-x: scroll;
   height: 1000vh;
   background: url(../img/background.png), rgb(240, 240, 240) 50%/cover no-repeat;
 }
@@ -19,40 +18,132 @@ a {
 }
 
 header {
-  margin: 40px 0;
-  /* padding: 0 335px; */
-  padding: 0 26.84%;
-  width: 100%;
-  height: 38.273px;
   display: flex;
   justify-content: space-between;
-}
-header a {
-  color: #000;
-  text-align: right;
+  align-items: center;
+  flex-direction: row;
+  margin: 40px 0;
+  padding: 0 26.84%;
+  width: 100%;
+  height: 38.3px;
   font-family: Montserrat;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
 }
 header .telephone {
   display: flex;
   align-items: start;
 }
 header .telephone a {
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+}
+header .telephone a:last-child {
   margin-left: 25px;
 }
 
 .info_block {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  width: 100%;
   font-family: Montserrat;
+}
+.info_block h1 {
+  margin-bottom: 10px;
+  max-width: 490px;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 60px;
+}
+.info_block p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+}
+.info_block .Feedback {
+  max-width: 320px;
+}
+.info_block .Feedback .input_block {
+  margin-top: 10px;
+  position: relative;
+}
+.info_block .Feedback .input_block input {
+  width: 320px;
+  height: 60px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+.info_block .Feedback label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px 0 20px 0;
+}
+.info_block .Feedback label p {
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 25px;
+  display: inline;
+}
+.info_block .Feedback label p a {
+  color: black;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+.info_block .Feedback label .checkbox {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid black;
+  opacity: 0.8;
+  position: relative;
+}
+.info_block .Feedback label .checkbox::before {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: "";
+  margin-top: 1px;
+  width: 10px;
+  height: 8px;
+  display: inline-block;
+  background-image: url(../img/Path.svg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.2s;
+}
+.info_block .Feedback input.hidden:checked + .checkbox::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.info_block .Feedback button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 320px;
+  height: 70px;
+  border-radius: 10px;
+  border: none;
+  background-color: #2CC9B8;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  cursor: pointer;
+}
+.info_block .Feedback button img {
+  margin-left: 20px;
 }
 .info_block .auto_block {
   position: relative;
+  display: none;
 }
 .info_block .auto_block img {
   background-position: center;
@@ -79,123 +170,33 @@ header .telephone a {
   line-height: 30px;
   color: #fff;
 }
-.info_block .num_2 .auto_block {
+.info_block .block_right {
+  width: 540px;
+}
+.info_block .block_right .auto_block {
   width: 100%;
+  display: block;
   transform: translateX(-100px);
   margin-top: 200px;
 }
-.info_block .Feedback {
-  max-width: 320px;
-}
-.info_block h1 {
-  margin-bottom: 10px;
-  max-width: 490px;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 60px;
-}
-.info_block p {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 25px;
-  text-align: center;
-}
-.info_block label {
-  margin: 10px 0 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-.info_block label p {
-  font-weight: 300;
-  font-size: 10px;
-  line-height: 25px;
-  display: inline;
-}
-.info_block label p a {
-  color: black;
-  text-decoration: underline;
-  opacity: 0.8;
-}
-.info_block button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 320px;
-  height: 70px;
-  border-radius: 10px;
-  background-color: #2CC9B8;
-  color: #fff;
-  border: none;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 30px;
-  cursor: pointer;
-}
-.info_block button img {
-  margin-left: 20px;
-}
-.info_block .checkbox {
-  margin-right: 10px;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-  border: 1px solid black;
-  opacity: 0.8;
-  position: relative;
-}
-.info_block .checkbox::before {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  content: "";
-  margin-top: 1px;
-  display: inline-block;
-  width: 10px;
-  height: 8px;
-  background-image: url(../img/Path.svg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: 0.2s;
-}
-.info_block input.hidden:checked + .checkbox::before {
-  transform: translate(-50%, -50%) scale(1);
-}
-.info_block .input_block {
-  margin-top: 10px;
-  position: relative;
-}
-.info_block .input_block input {
-  width: 320px;
-  height: 60px;
-  border-radius: 5px;
-  border: 1px solid #000;
-  position: relative;
-}
 
 @media (max-width: 1050px) {
-  .container.num_2 {
+  .block_right {
     display: none;
   }
-  .auto_block.hidden {
-    display: block;
-  }
-  .container.num_1 {
+  .block_left {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
     flex-direction: column;
   }
-  .container.num_1 h1 {
+  .block_left h1 {
     max-width: 320px;
     font-size: 25px;
     line-height: 40px;
+  }
+  .block_left .auto_block {
+    display: block;
   }
 }
 @media (max-width: 960px) {
@@ -207,11 +208,11 @@ header .telephone a {
   }
 }
 @media (max-width: 680px) {
-  .container.num_1 {
+  .block_left {
     width: 100%;
     overflow-x: hidden;
   }
-  .auto_block.hidden {
+  .block_left .auto_block {
     margin: 30px 0;
     transform: translateX(170px);
   }
