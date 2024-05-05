@@ -10,7 +10,7 @@
 }
 
 body {
-    background: url(/img/background.png), lightgray 50% / cover no-repeat;
+    background: url(img/background.png), lightgray 50% / cover no-repeat;
 }
 
 a {
@@ -24,35 +24,169 @@ header {
     width: 100%;
     height: 38.273px;
     display: flex; justify-content: space-between;
+
+    a {
+        color: #000;
+        text-align: right;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+    .telephone {
+        display: flex; align-items: start;
+
+        a {
+            margin-left: 25px;
+        }
+    }
 } 
 
-header a{
-    color: #000;
-    text-align: right;
+.info_block {
+    margin-top: 40px;
+    width: 100%; height: 530px;
+    @include Flex;
     font-family: Montserrat;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
+
+    .auto_block {
+        margin-top: 120px;
+        position: relative;
+        img{
+            @include Image;
+        }
+
+        .Ellipse {
+            @include Flex;
+            width: 153px; height: 153px;
+            background-color:#8ED74F;
+            border-radius: 50%;
+            position: absolute;
+            top: -25px; left: 20px;
+            z-index: -1;
+                
+                p {
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 30px;
+                    color: #fff;
+                }
+           }
+   }
+
+   
+
+
+    .Feedback {
+        max-width: 320px;
+    }
+
+    h1 {
+        margin-bottom: 80px;
+        max-width: 490px;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 25px;
+        text-align: center;
+    }
+
+    label {
+        margin: 10px 0 20px 0;
+        @include Flex;
+        p{
+            font-weight: 300;
+            font-size: 10px;
+            line-height: 25px;
+            display: inline;
+            a{
+                color: black;
+                text-decoration: underline;
+                opacity: .8;
+            }
+        }
+    }
+
+    button {
+        @include Flex;
+        width: 320px;
+        height: 70px;
+        border-radius: 10px;
+        background-color:#2CC9B8;
+        color: #fff;
+        border: none;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 30px;
+        cursor: pointer;
+
+        img {
+            margin-left: 20px;
+        }
+    }
+    .checkbox {
+        margin-right: 10px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        border: 1px solid black;
+        opacity: .8;
+        position: relative;
+
+        &::before {
+            @include Image;
+            content: '';
+            margin-top: 1px;
+            display: inline-block;
+            width: 10px; height: 8px;
+            background-image: url(img/Path.svg);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: .2s;
+        
+        }
+    }
+
+    input.hidden:checked + .checkbox::before {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .input_block {
+        margin-top: 10px;
+        position: relative;
+        // &::before {
+        //     @include Image;
+        //     content: '';
+        //     width: 20px; height: 20px;
+        //     background-image: url(img/header_svg.svg);
+        //     position: absolute;
+        //     left: 10px; top: 10px;
+        // }
+
+        input {
+            width: 320px; height: 60px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            position: relative;       
+        }
+    }
 }
 
-.telephone {
-    display: flex;align-items: start;
-}
 
-.telephone a{
-    margin-left: 25px;
-}
-
-// main h1{
-//     max-width: 533px;
-//     color: #000;
-//     font-family: Montserrat;
-//     font-size: 40px;
-//     font-style: normal;
-//     font-weight: 400;
-//     line-height: 60px;
-// }
-
-p {
-    font-family: Montserrat;
+@media (max-width: 960px) {
+      header {
+        padding: 0 10%;
+         
+        a:last-child {
+            display: none;
+        }
+      }
 }
