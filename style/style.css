@@ -152,7 +152,7 @@ header .telephone a {
   display: inline-block;
   width: 10px;
   height: 8px;
-  background-image: url(img/Path.svg);
+  background-image: url(../img/Path.svg);
   position: absolute;
   top: 50%;
   left: 50%;
