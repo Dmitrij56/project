@@ -19,7 +19,7 @@ a {
 }
 
 header {
-    @include Flex(space-between);
+    @include Flex(space-between,start);
     margin: 40px 0;
     padding: 0 26.84%;
     width: 100%; height: 38.3px;
@@ -66,19 +66,27 @@ header {
         .input_block {
             margin-top: 10px;
             position: relative;
-            // &::before {
-            //     @include Image;
-            //     content: '';
-            //     width: 20px; height: 20px;
-            //     background-image: url(img/header_svg.svg);
-            //     position: absolute;
-            //     left: 10px; top: 10px;
-            // }
+            &::before {
+                @include Image;
+                content: '';
+                width: 16px; height: 16px;
+                background-image: url(../img/header_svg.svg);
+                position: absolute;
+                left: 18px;
+                top: 50%;
+                transform: translateY(-50%); 
+                opacity: .4;
+            }
     
             input {
+                font-family: Montserrat;
+                padding: 10px 0 10px 45px;
                 width: 320px; height: 60px;
                 border-radius: 5px;
                 border: 1px solid #000;
+                font-size: 25px;
+                font-weight: 500;
+                line-height: 16px;
             }
         }
 
@@ -297,6 +305,95 @@ header {
     }
 }
 
+.h3 {
+    margin: 50px 0 0 10%;
+    max-width: 350px;
+    font-family: Montserrat;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 60px;
+}
+
+.cards_info {
+    margin-top: 100px;
+    @include Flex(center, start);
+    flex-wrap: wrap;
+    width: 100%;
+    font-family: Montserrat;
+    
+    .icon {
+        @include Flex;
+        margin-bottom: 10px;
+        width: 97px; height: 97px;
+        background-color: #27242D;
+        border-radius: 50%;
+
+        svg {
+            fill: #8ED74F;
+        }
+    }
+
+    .card {
+        margin: 10px 20px;
+        width: 258px;
+
+       
+        h3{
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 30px;
+
+            span {
+                color: #8ED74F;
+            }
+        }
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 25px;
+        }
+        a{
+            color: black;
+            text-decoration: underline;
+        }
+    }
+
+    .card_1 svg{
+        transform: translate(6px, -5px);
+    }
+    .card_2 svg{
+        transform: translate(1px, -5px);
+    }
+    .card_4 svg{
+        transform: translate(-2px, -1px);
+    }
+}
+
+.button_block{
+    @include Flex;
+    width: 100%;
+    margin-top: 100px;
+
+    button{
+        @include Flex;
+    
+        width: 320px; height: 70px;
+        border-radius: 10px;
+        border: none;
+        background-color:#2CC9B8;
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 30px;
+        cursor: pointer;
+
+        img {
+            margin-left: 20px;
+        }
+    }
+}
+
 @media (max-width: 960px) {
       header {
         padding: 0 10%;
@@ -315,6 +412,28 @@ header {
         .auto_block{
             margin: 30px 0;
             transform: translateX(170px);
+        }
+    }
+
+    .cards_info{
+        margin-top: 50px;
+
+        .card {
+            margin: 10px 0;
+            width: 320px;
+            display: flex;
+
+            .text {
+                margin-left: 20px;
+                width: 210px;
+            }
+        }
+        .icon{
+            margin-top: 5px;
+            background-color: #8ED74F;
+            svg {
+                fill: #fff;
+            }
         }
     }
 
